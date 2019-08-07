@@ -3,40 +3,30 @@ function renderCircles(circles) {                      //function that renders c
     // HINT: You probably need to write a for loop!
     //       Or, if you're feeling fancy, use .map()
 
-    let circleData = []
-    for (let index = 0; index < circles.length; index++) { // iterate through the length of the circles function. The for loop can't access circlesAbstraction, but can access circles() so use circles.length
-        let radius = circles[index].radius
-        let color = circles[index].color
+    // document.getElementById("content").setAttribute("id", "circles") //<-- Does not work because it changes the content id so nothing else appears
 
-        let div = `<div style = "border-radius: ${radius}; color: ${color}"></div>`
+    let circleDivs = []                                 //Accumulator that will hold the new array
+    for (let idx = 0; idx < circles.length; idx++) {    //for loop will cycle through the function cirlesb elow 
+        let width = circles[idx].radius
+        let height = circles[idx].radius
+        let color = circles[idx].color
 
-        circleData.push(div)                  
+        let div = `<div id= "circles" style= "border-radius: 50%; background-color: ${color}; height: ${2 * height}px; width: ${2 * width}px; margin-bottom: 10px;"></div>`
+
+        circleDivs.push(div)        //pushes the div you created to the circleDivs array
     }
-    console.log(circleData)
+    console.dir(circleDivs)       
+    return circleDivs.join('\n')     //returns circleDivs array as a string with spaces in between rather than commas
 
 
-    //create a new array with the information in circles() then use the new array to input information. You can do this using the map function!
-
-    // function createCircleHTML (obj) {  //this function is supposed to create a div for html
-    //     let div = `<div style = "border-radius: ${circles.radius} color: ${circles.color}"</div>`
-    //     return div
+    /* My .Map method: it works! but is not centered. */
+    // function buildCircleHtml(obj) {
+    //     //  
+    //     return `<div style="border-radius: 50%; background-color: ${obj.color}; height: ${2 * obj.radius}px; width: ${2 * obj.radius}px"></div>`
     // }
+    // let newArr = circles.map(buildCircleHtml).join('') //Map creates a new array from performing a function on another array. let newArr = oldArray.map(function)
+    // return newArr
 
-    // //map function that uses create createCircleHTML
-
-    // let newArr = circles.map(createCircleHTML)
-
-    // console.log(circles.map())
-
-
-    let circleDivs = circleData.join()
-    console.log(circleDivs)
-
-    return `
-        <div class="text-center mt-5">
-           <div>${circleDivs}</div>
-        </div>
-    `
 }
 
 function circles() {                                    //this function has contains an array of objects with information that will be given to renderCircles

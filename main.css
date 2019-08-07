@@ -1,1 +1,8 @@
 /* Type whatever CSS you need here! */
+
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 20px;
+}
