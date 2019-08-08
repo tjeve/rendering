@@ -24,7 +24,7 @@ function renderCircles(circles) {                      //function that renders c
 
     /* My .Map method: it works! but is not centered. */
     function buildCircleHtml(obj) {
-        //  
+        // This function applies the properties of circlesAbstraction inside of circles() to circles.
         return `<div style="border-radius: 50%; background-color: ${obj.color}; height: ${2 * obj.radius}px; width: ${2 * obj.radius}px; margin-bottom: 10px;"></div>`
     }
     let newArr = circles.map(buildCircleHtml).join('') //Map creates a new array from performing a function on another array. let newArr = oldArray.map(function)
