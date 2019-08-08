@@ -60,5 +60,13 @@ function students() {
 
     content.innerHTML = renderStudents(studentsAbstraction);
 }
-
+/*
+What I learned:
+- Using inline styles can be useful for something quick, but over using them can be annoying later on when
+you go back to manipulate the page later on.
+- If you're manipulating CSS using ${} notation, you cannot do this on a CSS file, so that likely needs to be done in your JS file
+- if/else statements require {} notation for the action part of it ex: if(something){do this}else{do this}.
+- Conditional Ternary statements are quick ways to write if/eles statements in line in JS so that your code doesn't look as bulky.
+However, you should not use them for anything that is too complex. They are probably best used for single word replacements.
+*/
 // ${obj.isPresent ? "Present" : "Absent"}
