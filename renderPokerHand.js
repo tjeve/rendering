@@ -4,13 +4,13 @@ function renderPokerHand(pokerHand) {
 
     //<img src="cards/${obj.value}${obj.suit}.png">
     function displayHand (obj) {
-        return `<div class=""><img src="cards/${obj.value}${obj.suit}.png"></div>`
+        return `<div class="poker-cards"><img src="cards/${obj.value}${obj.suit}.png"></div>`
     }
     let renderHand = pokerHand.map(displayHand)
     console.log(renderHand);
     return `
-        <div class="text-center mt-5">
-            ${renderHand}
+        <div class="text-center mt-5 poker-cards">
+            ${renderHand.join('')}
         </div>
     `
 }
@@ -44,3 +44,12 @@ function pokerHand() {
     content.innerHTML = renderPokerHand(pokerHandAbstraction);
 
 }
+
+/*
+What I learned:
+- while debugging, console.log() your functions. You should see what you're looking for
+if not somethings wrong.
+- Make sure that all of your functions have a return value. If not they will return undefined.
+- This means that if your function returns undefined, you probably forgot to specifiy the
+return value.
+*/

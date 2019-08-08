@@ -27,3 +27,8 @@
     border: solid thin gray;
     margin-bottom: 20px;
 }
+
+/*renderPokerCards*/
+.poker-cards {
+    flex-direction: row;
+}
