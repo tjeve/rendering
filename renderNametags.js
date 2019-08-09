@@ -21,11 +21,11 @@ function renderNametags(nametags) {
     //                 ${nameTagArray}
     //             </div>`
 
-    function createNameTag (obj) {
+    function createNameTag (person) {
         
         return `<div style="margin-top: 30px; margin-bottom: 20px; border: solid thin gray; display: flex; flex-direction: column; width: 200px;">
                     <div style= "font-weight: bold; padding: 5px; border-bottom: solid thin gray; color: white; background-color: blue; text-align: center; flex: 1">Hello, my name is:</div>
-                    <div style= "padding: 15px; text-align: center; width: 200px; flex: 4">${obj}</div>
+                    <div style= "padding: 15px; text-align: center; width: 200px; flex: 4">${person}</div>
                 </div>`
     }
 

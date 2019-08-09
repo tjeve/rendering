@@ -2,24 +2,32 @@
 function renderStudents(students) {
 
     //  /* change the background color */
-    function changeColor (obj) {
-        if (obj.isPresent === false) {
-            return "tomato"
-        } else {return "lightgreen"}
-    }
+    // function changeColor (obj) {
+    //     if (obj.isPresent === false) {
+    //         return "tomato"
+    //     } else {return "lightgreen"}
+    // } 
+    //I rewrote this code using a conditional ternary operator. The other way to do this is using the if/else statement below for the changeName function
 
     /* change T/F to Present/Absent */
-    function changeName (obj) {
-        if (obj.isPresent === false) {
-            return "Absent"
-        } else {return "Present"}
+    function changeName (person) {
+        // if (person.isPresent === false) { //What if the key isPresent isn't in the array below? What if it had a value of null, or undefined?
+        //     return "Absent"               //This function would then mark it as present. Which is probably not what you want. This would be 
+        // } else {return "Present"}         //an example of not wanting to be explicit by using ===, you might want to use truthy, falsy here
+
+        return person.isPresent ? "Present" : "Absent" // a function like "isPresent" starting with is implies a boolean value. So you just have
+                                                        // to say if ...then the word, because it will return a boolean value anyway.
+        if (person.isPresent) return "Present" //Line 18 and line 20 and 21 are a good way to represent these.
+        return "Absent"
+
+
     }
 
-    function rollCall (obj) {
+    function rollCall (person) {
         
         return `<div class="student-container">
-                    <div style="background-color: ${obj.isPresent ? "lightgreen" : "tomato"}" class="student-names">${obj.name}</div>
-                    <div style="background-color: ${obj.isPresent ? "lightgreen" : "tomato"}" class="student-attendance">${changeName(obj)}</div> 
+                    <div style="background-color: ${person.isPresent ? "lightgreen" : "tomato"}" class="student-names">${person.name}</div>
+                    <div style="background-color: ${person.isPresent ? "lightgreen" : "tomato"}" class="student-attendance">${changeName(person)}</div> 
                 </div>`
     }
     //I want to pass a color to the main css not to here. 

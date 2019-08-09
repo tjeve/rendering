@@ -1,6 +1,37 @@
 /* Type whatever CSS you need here! */
 
-/*renderStudents */
+/* renderRestaurants */
+.restBox {
+    flex-direction: row;
+    padding-right: 20px;
+}
+.restContainer {
+    border-radius: 5%;
+    width: 140px;
+    height: 85px;
+    background-color:silver;
+    padding-left: 5px;
+    margin-bottom: 20px;
+}
+.restName {
+    text-align: start;
+    font-size: 22px;
+    font-weight: bold;
+}
+.restType {
+    font-size: 12px;
+    color: gray;
+    text-align: start;
+}
+.restPrice {
+    font-size: 20px;
+    color: limegreen;
+    text-align: start;
+}
+
+
+
+/* renderStudents */
 .text-center {
     display: flex;
     flex-direction: column;
@@ -28,7 +59,7 @@
     margin-bottom: 20px;
 }
 
-/*renderPokerCards*/
+/* renderPokerCards */
 .poker-cards {
     flex-direction: row;
 }

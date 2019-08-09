@@ -1,13 +1,15 @@
+// HINT: You can use <img /> tags that point to these playing card images: 
+    // https://commons.wikimedia.org/wiki/Category:SVG_playing_cards
 
 function renderPokerHand(pokerHand) {
     // HINT: You can use <img /> tags that point to the card images in the /cards folder
 
-    //<img src="cards/${obj.value}${obj.suit}.png">
+    //return `<div class="poker-cards"><img src="cards/${obj.value}${obj.suit}.png"></div>`
     function displayHand (obj) {
-        return `<div class="poker-cards"><img src="cards/${obj.value}${obj.suit}.png"></div>`
+        return `<div class="poker-cards"><img src="cards/${obj.value}${obj.suit}.png" width="200px;"></div>`
     }
     let renderHand = pokerHand.map(displayHand)
-    console.log(renderHand);
+    
     return `
         <div class="text-center mt-5 poker-cards">
             ${renderHand.join('')}
