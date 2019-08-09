@@ -1,8 +1,31 @@
 
 function renderMovies(movies) {
+
+    function movieCards (movieData) {
+        return `<div class="whole-card">
+                    <div class="poster"><img class="poster" src="${movieData.poster} width="20px"></div>
+                    <div class="card-info">
+                        <div class="one">
+                            <div class="title"><a style="color: black" href="http://www.imdb.com/title/${movieData.imdbID}">${movieData.title}</a></div>
+                            <div class="year">${movieData.year}</div>
+                        </div>
+                        <div class="two">
+                            <div class="in-card">IMDB:</div>
+                            <div class="in-card">${movieData.imdbRating} / 10</div>
+                        </div>
+                        <div class="three">
+                            <div class="in-card">Rotten Tomatoes:</div>
+                            <div class="in-card">${movieData.rottenTomatoesRating * 100}%</div>
+                        </div>
+                    </div>
+                </div>`
+    }
+
+    let movieScores = movies.map(movieCards).join('')
+
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(movies)}</code>
+            ${movieScores}
         </div>
     `
 }

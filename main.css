@@ -1,5 +1,54 @@
 /* Type whatever CSS you need here! */
 
+/* renderMovies */
+.whole-card {
+    background-color: silver;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    padding: 10px 10px;
+    border-radius: 5%;
+    width: 360px;
+}
+.card-info {
+    background-color: white;
+    justify-content: flex-end;
+    flex: 55;
+    border-radius: 5%;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.poster {
+    justify-content: flex-end;
+    flex: 45;
+    height: 200px;
+    padding-right: 5px;
+}
+.title {
+    color: black;
+    font-weight: bold;
+    font: 18px;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 5px;
+}
+.year {
+    display: flex;
+    justify-content: flex-start;
+    font: 10px;
+    padding-left: 5px;
+}
+.in-card {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 5px;
+}
+
+
+
+
 /* renderRestaurants */
 .restBox {
     flex-direction: row;
