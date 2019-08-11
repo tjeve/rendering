@@ -1,11 +1,85 @@
 
 function renderAlbums(albums) {
+
+    // function createTrackInfo (songs) {
+    //     return `<div class="song">
+    //                 <button>Play</button>
+    //                 <div class="title">${albums.albums}</div>
+    //                 <div class="length"></div>
+    //             </div>`
+    // }
+
+    // The info is an array with a object with an array of two objects, each with another object inside
+    console.assert(albums.length === 1, "The first array holds more or less than one item")
+    /*
+    Create a container to hold the tracks,
+    */
+
+    /* Second Layer - create a container to hold the albums */
+    // function createAlbums (albumInfo) {
+    //     return `<div class="album">${albumInfo.albums.title}</div>`
+    // }
+
+    // let makeEachAlbum = albumInfo.map(createAlbums)
+
+    /* First layer - create a container to hold the artist */
+    function createArtist (albums) {
+
+        console.log(albums.albums[1].title)
+
+        return `<div class="album-container">
+                    <div class="artist"><h1>${albums.artist}</h1></div>
+                    <div class="title"></div>
+                </div>`
+    }
+
+    let makeAlbums = albums.map(createArtist)
+    
+
+
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(albums)}</code>
+            ${makeAlbums}
         </div>
     `
 }
+
+
+// function buildSingleSongHTML (oneSong) { returns HTML string for a single song }
+function buildSingleSongHTML (oneSong) {
+    return `<li>
+                <div class="songTitle">${oneSong.title}</div>
+                <div class="songLength">${oneSong.length}</div>
+            </li>`
+}
+const songsHTMLStrings = songs.map(buildSingleSongHTML)
+const songsHTML = songsHTMLStrings.join('')
+
+// function buildSingleAlbumHTML (oneAlbum) { returns HTML string for a single album }
+function buildSingleAlbumHTML (oneAlbum) {
+    return `<div class="albumInfo">
+                <div class="album-cover"><img src="${oneAlbum.albumCover}"></div>
+                <div>${oneAlbum.title}</div>
+                <ul>
+                    ${songHTML}
+                </ul>
+            </div>`
+}
+const albumsHTMLStrings = albums.map(buildSingleAlbumHTML)
+const albumsHTML = albumsHTMLStrings.join('')
+
+// function buildSingleArtistHTML (artist) { returns HTML for single artist }
+function buildSingleArtistHTML (oneArtist) {
+    return `<div>
+                <div><h1>${oneArtist.artist}</h1></div>
+                <div>${albumsHTML}</div>
+            </div>`
+}
+
+const artistHTMLStrings = artist.map(buildSingleArtistHTML)
+const artistHTML = artistHTMLStrings.join('')
+
+
 
 function albums() {
     var content = document.getElementById('content');

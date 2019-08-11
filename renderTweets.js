@@ -1,8 +1,29 @@
 
 function renderTweets(tweets) {
+
+    function buildTweets (tweetInfo) {
+        return `<div class="container">
+                    <div class="top">
+                        <div class="profile-pic"><img src=${tweetInfo.user.profilePic}></div>
+                        <div class="username">${tweetInfo.user.username}</div>
+                        <div class="handle">${tweetInfo.user.handle}</div>
+                    </div>
+                    <div class="tweet">${tweetInfo.text}</div>
+                    <hr>
+                    <div class="menu">
+                        <div class="comment">${tweetInfo.replies}</div>
+                        <div class="retweet">${tweetInfo.retweets}</div>
+                        <div class="favorite">${tweetInfo.likes}</div>
+                        <div class="email"></div>
+                    </div>
+                 </div>`
+    }
+
+    let displayTweets = tweets.map(buildTweets).join('')
+
     return `
         <div class="text-center mt-5">
-            <code>${JSON.stringify(tweets)}</code>
+            ${displayTweets}
         </div>
     `
 }
